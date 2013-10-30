@@ -1,0 +1,191 @@
+article, section, aside, hgroup, nav, header, footer, figure, figcaption {
+    display: block;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid none;
+}
+
+div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;
+    background-color: teal;
+    margin-right: 2px;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 49px;
+    background: #0e0e0e;
+    bottom: auto;
+}
+
+.logo {
+    margin: 13px 0px 0px 90px;
+}
+
+.content {
+    margin: 0px;
+    padding-top: 80px;
+    height: 360px;
+    background-color: #1a82f7; 
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E43C25), to(#E54A1D));
+    background-image: -webkit-linear-gradient(left, #E43C25, #E54A1D); 
+    background-image:    -moz-linear-gradient(left, #E43C25, #E54A1D);
+    background-image:     -ms-linear-gradient(left, #E43C25, #E54A1D);
+    background-image:      -o-linear-gradient(left, #E43C25, #E54A1D);
+}
+
+div.content > img {
+    display: inline-block;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    height: 200px;
+    width: 200px;
+    margin: 0px 30px 0px 80px;
+}
+
+.content-info {
+    width: 340px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.grey-info-lg {
+    vertical-align: top;
+    display: inline-block;
+    background: #292929;
+    width: 308px;
+    height: 319px;
+    border-radius: 3px;
+    border: 1px solid #111;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.grey-info {
+    vertical-align: top;
+    display: inline-block;
+    background: #292929;
+    width: 308px;
+    height: 148px;
+    border-radius: 3px;
+    border: 1px solid #111;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin: 0px 0px 20px 0px;
+}
+
+.grey-title {
+    display: inline-block;
+    background: url(../images/bgd_grey.png) repeat-x;
+    height: 28px;
+    width: 298px;
+    vertical-align: top;
+    font-family: Helvetica, serif;
+    color: #fff;
+    padding: 12px 0px 0px 10px;
+    text-transform: uppercase;
+}
+
+.grey-title img {
+    float: right;
+    padding: 0px 10px 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.grey-info p {
+    font-size: 25px;
+    margin: 40px 0px 0px 20px;
+    color: #fff;
+    display: inline-block;
+}
+
+.grey-stats {
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    margin: 30px 16px 0px 0px;
+    font-family: Helvetica;
+    font-size: 12px;
+    color: #fff;
+}
+
+.grey-stats p {
+    margin: 2px 6px 0px 6px;
+    font-size: 13px;
+    font-weight: normal;
+    vertical-align: top;
+}
+
+.grey-stats-mn {
+    margin: 0px 0px 5px 0px;
+}
+
+.graph {
+    background: #eee;
+    border-radius: 2px;
+    width: 850px;
+    padding: 5px 5px 5px 5px;
+    font-family: Helvetica;
+    font-size: 13px;
+
+}
+
+  rect.bordered {
+        stroke: #E6E6E6;
+        stroke-width:2px;   
+      }
+
+      text.mono {
+        font-size: 8pt;
+        font-family: Consolas, courier;
+        fill: #aaa;
+      }
+
+      text.axis-workweek {
+        fill: #000;
+      }
+
+      text.axis-worktime {
+        fill: #000;
+      }
+
+
+.graph-header {
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    width: 945px;
+    height: auto;
+    margin: 7px 0px 0px 0px;
+    padding: 7px 0px 7px 0px;
+    font-family: Helvetica;
+    text-transform: uppercase;
+    color: #bbb;
+    font-size: 12px;
+}
+
+.content-graphy {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0px 0px 0px;
+}
+
+#chart {
+    margin: 0px 0px 0px 0px;
+}
+
+.cool {
+    margin: 0px 0px 0px 0px;
+}
+

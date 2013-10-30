@@ -1,0 +1,526 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>d3 test</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <script type="text/javascript" src="scripts/d3/d3.v3.js"></script>
+        <link rel="stylesheet" href="styles/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
+
+        <!-- endbuild -->
+    </head>
+    <body>     
+
+        <div class="header"><img src="../images/logo.png" class="logo" /></div>
+
+        <div class="content">
+
+            
+            <img src="../images/gaga.jpg" />
+            
+        <div class="content-info">
+            <div class="grey-info">
+                <div class="grey-title">Unique Visitors
+                    <img src="../images/icon_question.png" />
+                </div>
+                <p>4,512,323</p>
+                <div class="grey-stats">
+                    <div class="grey-stats-mn">
+                        <img src="../images/stat_month.png" />
+                        <p>-176%</p>
+                        <img src="../images/arrow_red.png" />
+                    </div>
+                    <div class="grey-stats-mn">
+                        <img src="../images/stat_year.png" />
+                        <p>-176%</p>
+                        <img src="../images/arrow_red.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="grey-info">
+                <div class="grey-title">Unique Visitors
+                    
+                </div>
+                <p>4,512,323</p>
+                <div class="grey-stats">
+                    <div class="grey-stats-mn">
+                        <img src="../images/stat_month.png" />
+                        <p>-176%</p>
+                        <img src="../images/arrow_red.png" />
+                    </div>
+                    <div class="grey-stats-mn">
+                        <img src="../images/stat_year.png" />
+                        <p>-176%</p>
+                        <img src="../images/arrow_red.png" />
+                    </div>
+                </div>
+            </div>
+    </div>
+
+             <div class="grey-info-lg">
+                <div class="grey-title">Top Traits (EQ)
+                </div>
+                <p>1.
+                eonline.com </p>
+                <img src="" />
+            </div>
+        </div>
+        
+        <div class="content-graphy">
+            <div class="graph">Is this your site? <a href="#">Sign up for Direct Measurement</a> to get a more complete picture of your website's traffic</div>
+            <div class="graph-header">Emotional Analytics Graph</div>
+            
+              <div id="chart"></div>
+        </div>
+
+        
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <script src="scripts/chroma.js"></script>
+
+         <script type="text/javascript">
+
+         var allTraits = {
+                happy: {
+                    traits: [
+                        {
+                            trait: 'energetic',
+                            intensity: 2
+                        },
+
+                        {
+                            trait: 'bright',
+                            intensity: 10
+                        }
+                    ],
+                    hits: 0
+                },
+
+                mad: {
+                    traits: [
+                        {
+                            trait: 'angry',
+                            intensity: 5
+                        },
+
+                        {
+                            trait: 'discontent',
+                            intensity: 12
+                        }
+                    ],
+                    hits: 0
+                },
+
+                hungry: {
+                    traits: [
+                        {
+                            trait: 'malnutritioned',
+                            intensity: 4
+                        },
+
+                        {
+                            trait: 'starving',
+                            intensity: 7
+                        }
+                    ],
+                    hits: 0
+                },
+
+                stupid: {
+                    traits: [
+                        {
+                            trait: 'uninteligent',
+                            intensity: 8
+                        },
+
+                        {
+                            trait: 'foolish',
+                            intensity: 6
+                        }
+                    ],
+                    hits: 0
+                },
+                funny: {
+                    traits: [
+                        {
+                            trait: 'unintelligent',
+                            intensity: 8
+                        },
+
+                        {
+                            trait: 'foolish',
+                            intensity: 6
+                        }
+                    ],
+                    hits: 0
+                },
+                sad: {
+                    traits: [
+                        {
+                            trait: 'intelligent',
+                            intensity: 8
+                        },
+
+                        {
+                            trait: 'suave',
+                            intensity: 46
+                        }
+                    ],
+                    hits: 0
+                },
+                cool: {
+                    traits: [
+                        {
+                            trait: 'unintelligent',
+                            intensity: 8
+                        },
+
+                        {
+                            trait: 'fool',
+                            intensity: 20
+                        }
+                    ],
+                    hits: 0
+                }
+            }
+
+            var allTraitsArray = ['happy', 'mad', 'hungry', 'stupid', "funny", "sad", "cool"]
+            var ladyGaga = ['angry', 'discontent', 'starving', 'foolish', 'unintelligent','fool','suave' ]
+
+            allTraitsArray.forEach(function(mainTrait) {
+                allTraits[mainTrait].traits.forEach(function(subTrait) {
+                    if (ladyGaga.indexOf(subTrait.trait) > -1) {
+                        allTraits[mainTrait].hits += subTrait.intensity
+                    }
+                })
+            })
+
+            console.log(allTraits.mad.hits)
+            
+            var dataset = []
+            dataset.push(allTraits.happy.hits, allTraits.mad.hits, allTraits.hungry.hits, allTraits.stupid.hits, allTraits.funny.hits, allTraits.sad.hits, allTraits.cool.hits)
+
+            var w = 500;
+            var h = 200;
+            var barPadding = 1; 
+
+            // Create SVG Element
+            var svg = d3.select(".cool")
+                .append("svg")
+                .attr("width", w)
+                .attr("height", h) 
+
+            svg.selectAll("rect")
+                .data(dataset)
+                .enter()
+                .append("rect")
+                .attr("x", function(d, i) {
+                    return i * (100 / dataset.length);
+                })
+                .attr("y", function(d) {
+                    return 20;
+                })
+                .attr("width", function(d) {
+                    return 240;
+                })
+                .attr("height", function(d) {
+                    return 100;
+                })
+                .attr("fill", function(d) {
+                    return "rgb(0, 0, " + (d * 30) + ")";
+                });
+
+            svg.selectAll("text")
+                .data(dataset)
+                .enter()
+                .append("text")
+                .text(function(d) {
+                    return d;
+                })
+                .attr("x", function(d, i) {
+                    return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2
+                })
+                .attr("y", function(d) {
+                    return h - (d * 4) + 14;
+                })
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "11px")
+                .attr("fill", "white")
+                .attr("text-anchor", "middle")
+        
+            var wikipediaHTMLResult = function(data) {
+                var readData = $('<div>' + data.parse.text["*"] + '</div>');
+                var box = readData.find('.infobox');
+                var imageURL        = null;
+             
+                // Check if page has images
+                if(data.parse.images.length >= 1) {
+                    imageURL        = box.find('img').first().attr('src');
+                }
+                
+                $('#insertTest').append('<div><img src="'+ imageURL + '"/></div>');
+                };
+             
+            function callWikipediaAPI(wikipediaPage) {
+                $.getJSON('http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?', {page:wikipediaPage, prop:'text|images', uselang:'en'}, wikipediaHTMLResult);
+            }
+             
+            callWikipediaAPI('Lady Gaga');
+
+        </script> 
+
+ <script type="text/javascript">
+      var margin = { top: 50, right: 0, bottom: 100, left: 100 },
+          width = 960 - margin.left - margin.right,
+          height = 430 - margin.top - margin.bottom,
+          gridSize = Math.floor(width / 24),
+          legendElementWidth = gridSize*2,
+          buckets = 9,
+          colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
+          days = ["Lady Gaga", "Katy Perry", "Drake", "Timberlake", "Rihanna", "Miley Cyrus", "Robin Thicke"],
+          times = ["angry", "fun", "sad", "happy", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
+
+
+      d3.tsv("data.tsv",
+        function(d) {
+          return {
+            day: +d.day,
+            hour: +d.hour,
+            value: +d.value
+          };
+        },
+        function(error, data) {
+          var colorScale = d3.scale.quantile()
+              .domain([0, buckets - 1, d3.max(data, function (d) { return d.value; })])
+              .range(colors);
+
+          var svg = d3.select("#chart").append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+          var dayLabels = svg.selectAll(".dayLabel")
+              .data(days)
+              .enter().append("text")
+                .text(function (d) { return d; })
+                .attr("x", 0)
+                .attr("y", function (d, i) { return i * gridSize; })
+                .style("text-anchor", "end")
+                .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+                .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+
+          var timeLabels = svg.selectAll(".timeLabel")
+              .data(times)
+              .enter().append("text")
+                .text(function(d) { return d; })
+                .attr("x", function(d, i) { return i * gridSize; })
+                .attr("y", 0)
+                .style("text-anchor", "middle")
+                .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+                .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
+
+          var heatMap = svg.selectAll(".hour")
+              .data(data)
+              .enter().append("rect")
+              .attr("x", function(d) { return (d.hour - 1) * gridSize; })
+              .attr("y", function(d) { return (d.day - 1) * gridSize; })
+              .attr("rx", 4)
+              .attr("ry", 4)
+              .attr("class", "hour bordered")
+              .attr("width", gridSize)
+              .attr("height", gridSize)
+              .style("fill", colors[0]);
+
+          heatMap.transition().duration(1000)
+              .style("fill", function(d) { return colorScale(d.value); });
+
+          heatMap.append("title").text(function(d) { return d.value; });
+              
+          var legend = svg.selectAll(".legend")
+              .data([0].concat(colorScale.quantiles()), function(d) { return d; })
+              .enter().append("g")
+              .attr("class", "legend");
+
+          legend.append("rect")
+            .attr("x", function(d, i) { return legendElementWidth * i; })
+            .attr("y", height)
+            .attr("width", legendElementWidth)
+            .attr("height", gridSize / 2)
+            .style("fill", function(d, i) { return colors[i]; });
+
+          legend.append("text")
+            .attr("class", "mono")
+            .text(function(d) { return "≥ " + Math.round(d); })
+            .attr("x", function(d, i) { return legendElementWidth * i; })
+            .attr("y", height + gridSize);
+      });
+    </script>
+
+        <script>
+            window.handle_uv_data = function (data) {};
+
+            var s = document.createElement('script'),
+            d = document.getElementsByClassName('cool')[0];
+            s.type = "text/javascript";
+            s.async = "async";
+            s.src ="https://apps.compete.com/sites/www.facebook.com/trended/uv/?apikey=e65de66543f738a505ffd956bf21b3d1&jsonp=handle_uv_data";  
+            d.appendChild(s);
+        </script>
+
+        <script>
+        ladygagaImg: {
+            colors: [
+                {
+                    hex: '#C8B2A6',
+                    percent: '22%'
+                },
+                {
+                    hex: '#C4C0B8',
+                    percent: '16%'
+                },
+                {
+                    hex: '#C4C0B8',
+                    percent: '16%'
+                },
+                {
+                    hex: '#C4C0B8',
+                    percent: '16%'
+                },
+                {
+                    hex: '#C4C0B8',
+                    percent: '16%'
+                }
+            ]
+        }
+        </script>
+
+        <script>
+       
+        var color = ["#C8B2A6", "#C4C0B8","#3F404C", "#4A9BAE"]
+        coolness = []
+        for (i=0; i < color.length; i++) {
+            chroma.contrast('#00C000', color[i])      
+            coolness.push(chroma.contrast('#ff0066', color[i]))
+            for (i = 0; i < coolness.length; i++) {
+                if (coolness[i] < 1.4) {
+                    console.log(coolness[i], color[i])
+                    var niceColor = color[i]
+                }
+            }
+        }
+
+        var colorMeCool = niceColor;
+        var PaleGreen = "immaturity, youthfulness, inexperience, new perspective,fresh start";
+        var EmeraldGreen = "abundance, wealth";
+        var JadeGreen = "trust, confidentiality, tact, diplomacy, generosity";
+
+        var colorGreen = ["#78AB46", "#4A7023","#3B5323", "#7F9A65"]
+        coolness2 = []
+        for (i=0; i < colorGreen.length; i++) {
+            coolness2.push(chroma.contrast(niceColor, colorGreen[i]))
+            for (i = 0; i < coolness2.length; i++) {
+                if (coolness2[i] < 1.4) {
+                    console.log(coolness2[i], colorGreen[i])
+                    var niceGreen = colorGreen[i]
+                }
+            }
+        }
+
+        var colorMeGreen = niceGreen;
+        if (colorMeGreen == '#4A7023') {
+            console.log("immaturity, youthfulness, inexperience, new perspective,fresh start")
+        }
+        
+Pale green: immaturity, youthfulness, inexperience, new perspective,fresh start
+Emerald green: abundance, wealth
+Jade green: trust, confidentiality, tact, diplomacy, generosity 
+
+
+        chroma.contrast('#ff0066', '#76CCD3')  
+        chroma.luminance('#C8B2A6')
+
+        var green = #00C000;
+
+        // Get main colors with percentage
+        // Match all colors to closest color using two methods
+           luminance and contrast
+        // Give intensity value and also give "personality trait" closest associated
+           with that matched color
+        // Have json data with all the colors
+        // Having info
+        // Run through all the colors
+        </script>
+
+        <script type="text/javascript">
+            var youTubeURL = 'http://gdata.youtube.com/feeds/api/videos/pco91kroVgQ?v=2&alt=json';
+
+            var json = (function() {
+                var json = null;
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': youTubeURL,
+                    'dataType': "json",
+                    'success': function(data) {
+                        json = data;
+                    }
+                });
+                return json;
+            })();
+            
+            document.write("Title: " + json.entry.title.$t + json.entry.yt$statistics.viewCount);
+
+        </script>
+
+    
+        <!-- endbuild -->
+
+        <!-- build:js(.tmp) scripts/coffee.js -->
+        <script src="scripts/hello.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
+
+<!-- Emotionalytics: 
+Mood Modeling - predictive trending for clothing and music using moods
+
+Couple Assumptions in Mood Modeling
+- top 100 artists/brands affect 75-80% of the market. 
+- Targeting younger demographics 
+
+How it Works?
+1) Takes Lady Gaga, run comparisons with 10 other artists, find differences, isolates those..train the system using revenue modeling, trend length, color matching, mood analytics and brand ratings - 2) Saves her snapshot of color pattern, revenue, trend time, 
+    and 3) Runs comparisons and then generates a cool output of clothing, product, suggestions 
+
+What we Accomplished?
+1) Creating basic infrastructure
+2) Creating Model, pattern and initial run through with one artist -->
+
+
