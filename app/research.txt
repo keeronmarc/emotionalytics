@@ -1,0 +1,29 @@
+
+Similar Celebrities
+Themes
+Multiple indexes from around websites - thesuperficial, omg, measuring articles, sentiment
+Twitter Sentiment analysis
+Product Analysis
+Visitors to Sites
+Average Age of Consumer
+
+Textual Analysis/Keyword Analysis
+Themes
+Competitive 
+Character Analysis
+Color Analysis
+Facial Analysis
+Emotional Analysis
+ROI of Characters
+Store/Brand Analysis
+Average Age of Consumer
+
+Anti-personality
+What's goal: long-term, short-term, controversy
+female automatically get added different point totals
+How long those personality traits will last, competitive landscape, market saturation
+
+Different industries have bearing on predictive analytics
+
+Used for Movie Analysis
+TV Commercial Analysis

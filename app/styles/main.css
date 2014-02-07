@@ -8,7 +8,21 @@ body {
     color: #333;
     padding: 0px;
     margin: 0px;
+    font-size: 8px;
     border: 1px solid none;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  font-size: 8px;
+}
+
+.area {
+  fill: steelblue;
 }
 
 div.bar {
@@ -90,11 +104,17 @@ div.content > img {
     background: url(../images/bgd_grey.png) repeat-x;
     height: 28px;
     width: 298px;
+    font-size: 15px;
     vertical-align: top;
     font-family: Helvetica, serif;
     color: #fff;
     padding: 12px 0px 0px 10px;
     text-transform: uppercase;
+}
+
+.grey-info-lg {
+    font-size: 15px;
+    color: #fff;
 }
 
 .grey-title img {
@@ -121,7 +141,31 @@ div.content > img {
     color: #fff;
 }
 
+.fillin-info {
+    font-size: 15px;
+    margin: 14px 0px 4px 15px;
+}
+
+.fillin-box {
+    background: #222;
+    vertical-align: top;
+    margin: 0px 0px 0px 16px;
+    width: 200px;
+    height: 20px;
+    border: 1px solid #333;
+}
+
+.fillin-percent {
+    background: #c7e9b4;
+    opacity: 0.3;
+    width: 150px;
+    margin: 1px;
+    height: 18px;
+}
+
+
 .grey-stats p {
+    display: inline-block;
     margin: 2px 6px 0px 6px;
     font-size: 13px;
     font-weight: normal;
@@ -148,18 +192,20 @@ div.content > img {
       }
 
       text.mono {
-        font-size: 8pt;
+        font-size: 7pt;
         font-family: Consolas, courier;
         fill: #aaa;
+
       }
 
       text.axis-workweek {
         fill: #000;
+        
       }
 
       text.axis-worktime {
         fill: #000;
-      }
+              }
 
 
 .graph-header {
