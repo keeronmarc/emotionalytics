@@ -12,6 +12,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <script type="text/javascript" src="scripts/d3/d3.v3.js"></script>
+        <script src="scripts/main.js"></script>
         <link rel="stylesheet" href="styles/main.css">
         <link href='http://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
 
@@ -202,229 +203,6 @@
 
          <script type="text/javascript">
 
-         var allTraits = {
-                strong: {
-                    traits: [
-                        {
-                            trait: 'Bravado',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Swaggering',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Explosive',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Strong',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Mighty',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Pulsing',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Confident',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Hungry',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Brassy',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Provocative',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Raucous',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'Monumental',
-                            intensity: 10
-                        }
-                    ],
-                    hits: 0
-                }, 
-                happy: {
-                    traits: [
-                        {
-                            trait: 'energetic',
-                            intensity: 2
-                        },
-
-                        {
-                            trait: 'bright',
-                            intensity: 10
-                        }
-                    ],
-                    hits: 0
-                },
-
-                mad: {
-                    traits: [
-                        {
-                            trait: 'angry',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'discontent',
-                            intensity: 10
-                        }
-                    ],
-                    hits: 0
-                },
-
-                hungry: {
-                    traits: [
-                        {
-                            trait: 'malnutritioned',
-                            intensity: 4
-                        },
-
-                        {
-                            trait: 'starving',
-                            intensity: 7
-                        }
-                    ],
-                    hits: 0
-                },
-
-                stupid: {
-                    traits: [
-                        {
-                            trait: 'uninteligent',
-                            intensity: 8
-                        },
-
-                        {
-                            trait: 'foolish',
-                            intensity: 6
-                        }
-                    ],
-                    hits: 0
-                }, 
-
-                lonely: {
-                    traits: [
-                        {
-                            trait: 'hyper',
-                            intensity: 12
-                        },                       
-                        
-                        {
-                            trait: 'feverish',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'campy',
-                            intensity: 10
-                        },
-                         {
-                            trait: 'exciting',
-                            intensity: 10
-                        },
-                        {
-                            trait: 'thrilling',
-                            intensity: 10
-                        }, 
-                        {
-                            trait: 'energetic',
-                            intensity: 10
-                        },                       
-                        {
-                            trait: 'passionate',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'animated',
-                            intensity: 10
-                        },
-                         {
-                            trait: 'exciting',
-                            intensity: 10
-                        },
-                        {
-                            trait: 'thrilling',
-                            intensity: 10
-                        },                       
-                        {
-                            trait: 'kinetic',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'ecstatic',
-                            intensity: 10
-                        },
-                         {
-                            trait: 'lively',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'uplifting',
-                            intensity: 10
-                        },                       
-                        {
-                            trait: 'celebratory',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'sparkling',
-                            intensity: 10
-                        },
-                         {
-                            trait: 'triumphant',
-                            intensity: 10
-                        },
-
-                        {
-                            trait: 'gentle',
-                            intensity: 10
-                        },
-                        {
-                            trait: 'positive',
-                            intensity: 10
-                        },
-                         {
-                            trait: 'powerful',
-                            intensity: 10
-                        },
-                        {
-                            trait: 'exuberant',
-                            intensity: 5
-                        }
-                    ],
-                    hits: 0
-                }
-            }
-
             var allTraitsArray = ['happy', 'mad', 'hungry', 'stupid', 'lonely']
             var ladyGaga = ['angry', 'discontent', 'starving', 'foolish','hyper', 'exuberant']
 
@@ -510,16 +288,7 @@
 
         </script> 
 
-        <script>
-            window.handle_uv_data = function (data) {};
-
-            var s = document.createElement('script'),
-            d = document.getElementsByClassName('cool')[0];
-            s.type = "text/javascript";
-            s.async = "async";
-            s.src ="https://apps.compete.com/sites/www.facebook.com/trended/uv/?apikey=e65de66543f738a505ffd956bf21b3d1&jsonp=handle_uv_data";  
-            d.appendChild(s);
-        </script>
+      
 
         <script>
        
@@ -634,26 +403,7 @@ d3.tsv("data3.tsv", function(error, data) {
 
 </script>
 
-        <script type="text/javascript">
-            var youTubeURL = 'http://gdata.youtube.com/feeds/api/videos/pco91kroVgQ?v=2&alt=json';
-
-            var json = (function() {
-                var json = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': youTubeURL,
-                    'dataType': "json",
-                    'success': function(data) {
-                        json = data;
-                    }
-                });
-                return json;
-            })();
-            
-            $('.uniquely').append(json.entry.yt$statistics.viewCount);
-
-        </script>
+        
 
     
         <!-- endbuild -->
